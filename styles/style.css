@@ -57,8 +57,26 @@
 
     100%
     {
-        transform: translateX(-600px);
+        transform: translateX(600px);
     }
+}
+
+@keyframes marqueeAnimation
+{
+    0%
+    {
+        transform: translateX(-2000px);
+    }
+
+    100%
+    {
+        transform: translateX(2000px);
+    }
+}
+
+.marquee-animation
+{
+    animation: marqueeAnimation ease-in-out infinite 3s;
 }
 
 .slideOutSidebar-animation{
@@ -86,10 +104,28 @@ button
     font-family: var(--general-font);
     font-weight: 900;
     color: white;
-    border: 5px solid transparent;
+    border: 3px solid transparent;
     border-radius: .85rem;
     box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.288);
     transition: all ease-in 500ms;
+}
+
+.sections-title
+{
+    font-family: var(--general-font);
+    color: #987D7D;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.breaker
+{
+    width: 85%;
+    height: 2px;
+    background-color: grey;
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.575);
+    align-self: center;
+    border-radius: 50px;
 }
 
 /* HTML + BODY */
@@ -104,7 +140,8 @@ body
     width: 100%;
     position: relative;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;  
+    overflow-x: hidden; 
 }
 
 /* STYLING */
@@ -323,28 +360,136 @@ img[alt="hero"]
 .services-marquee
 {
     width: 100%;
-    background-color: var(--blue-bgcolor);
     height: 150px;
+    background-color: var(--blue-bgcolor);
+    display: flex;
+    gap: 80px;
+    overflow-x: hidden;
+}
+
+.services-marquee > ul
+{
+    
+    height: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.services-marquee marquee > ul
-{
     list-style: none;
     display: flex;
     gap: 150px;    
+    transform: translateX(-2000px);
+    animation : marqueeAnimation linear 20s infinite;
 }
 
-.services-marquee > marquee > ul > li
+.services-marquee > ul > li
 {
     font-size: 2rem;
     font-family: var(--general-font);
     font-weight: bold;
+    width: max-content;
 }
 
+/* QUOTE */
+#quote
+{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
 
+#quote > h3
+{
+    font-family: var(--general-font);
+    color: black;
+    font-weight: 600;
+    max-width: 28ch;
+    text-align: center;
+    font-size: clamp(1.35rem, 4vw, 2.25rem);
+}
+
+/* services */
+#services
+{
+    margin-top: 30px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.card
+{
+    width: 330px;
+    height: auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 4px 4px 0px 0px black;
+    display: grid;
+    grid-template-rows: 1fr 40px 2.5fr 1.5fr;
+    grid-template-columns: 100%;
+    gap: 25px;
+    font-family: var(--general-font);
+    transition: ease-in-out 500ms;
+    cursor: pointer;
+}
+
+.card > .title
+{
+    font-weight: bold;
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
+}
+
+.card > .description
+{
+    line-height: 1.3;
+    text-align: justify;
+    text-justify: kashida;
+    word-spacing: 10px;   
+}
+
+.card > .footer
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card > .footer > .price
+{
+    font-weight: 900;
+    font-size: clamp(0.85rem, 1vw, 1.1rem);
+}
+
+.card > .footer > .callToAction-button
+{
+    background-color: transparent;
+    border-color: black;
+    color: black;
+    width: 130px;
+}
+
+.card:hover 
+{
+    border: 2px solid var(--blue-bgcolor);
+    box-shadow: 4px 4px 0px 0px var(--blue-bgcolor);
+    transform: scale(1.02);
+    margin-bottom: 10px;
+}
+
+.card:hover > .footer > .callToAction-button
+{
+    background-color: var(--blue-bgcolor);
+    border-color: whitesmoke;
+    color: white;
+}
 
 /* MEDIA QUERIES */
 
