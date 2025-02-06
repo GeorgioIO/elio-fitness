@@ -736,6 +736,12 @@ img[alt="hero"]
         width: 100%;
         border: none;
     }
+
+    #about
+    {
+        padding: 0px 35px 0px 35px;
+    }
+
 }
 
 /* xs */
