@@ -13,6 +13,11 @@
         <div class="logo">
             <h1>elio p.t.</h1>
         </div>
+        <div class="theme-toggler">
+            <img class="theme-icon" src="./images/moonicon.svg" alt="moon">
+            <div class="toggler-button" data-theme="light"></div>
+            <img class="theme-icon" src="./images/sunicon.svg" alt="sun">
+        </div>
         <nav>
             <ul class="navigations"> 
                 <li>
@@ -25,11 +30,13 @@
                     <a href="#services">Pricing</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
-        <button class="callToAction-button">Book now</button>
+        <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+            Book now
+        </button>
         <div class="burger-menu">
             <div class="line"></div>
             <div class="line"></div>
@@ -50,33 +57,37 @@
         <nav>
             <ul class="navigations"> 
                 <li>
-                    <a href="">Home</a>
+                    <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="">About</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="">Pricing</a>
+                    <a href="#services">Pricing</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
-        <button class="callToAction-button">Book now</button>
+        <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+            Book now
+        </button>
     </div>
     <!-- HERO -->
-    <main id="hero">
+    <main id="hero" class="section">
         <img  src="./images/hero.png" alt="hero">
         <div class="hero__texts">
             <p>Reach the best version of yourself with</p>
             <h2>Elio’s personal training</h2>
             <p>Book your personal session and start hitting your goal today</p>
-            <button class="callToAction-button">Book now</button>
+            <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+                Book now
+            </button>
         </div>
     </main>
     <!-- SERVICES MARQUEE -->
-    <div class="services-marquee">
+    <div class="services-marquee" class="section">
             <ul>
                 <li>Muscle</li>
                 <li>Nutrition</li>
@@ -93,13 +104,13 @@
             </ul>
     </div>
     <!-- QUOTE -->
-    <section id="quote">
+    <section id="quote" class="section">
         <p class="sections-title">Book your session</p>
-        <h3>Find your ideal regime and workout and shape your life</h3>
+        <h3>Find Your Ideal Nutrition Plan and Workout to <span class="gradient-text">shape</span> your life.</h3>
     </section>
     <div class="breaker"></div>
     <!-- SERVICES -->
-    <section id="services">
+    <section id="services" class="section"> 
         <div class="card">
             <svg height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50.463 50.463" xml:space="preserve">
             <g>
@@ -116,7 +127,10 @@
             <h3 class="title">Gain muscles</h3>
             <p class="description">Gain strength and definition with a customized plan. Get expert workouts, nutrition guidance, and progress tracking tailored to your goals.</p>
             <div class="footer">
-                <button class="callToAction-button">Book now</button>
+                <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+                    <div class="shine"></div>
+                    Book now
+                </button>
                 <p class="price">30$-80$/month</p>
             </div>
         </div>
@@ -135,7 +149,10 @@
             <h3 class="title">Weight loss</h3>
             <p class="description">Burn fat, boost energy, and build healthy habits with a personalized weight loss plan. Get expert workouts, nutrition guidance, and progress tracking tailored to your goals.</p>
             <div class="footer">
-                <button class="callToAction-button">Book now</button>
+                <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+                    <div class="shine"></div>
+                    Book now
+                </button>
                 <p class="price">30$-80$/month</p>
             </div>
         </div>
@@ -149,13 +166,16 @@
             <h3 class="title">Nutrition</h3>
             <p class="description">Optimize your health with personalized nutrition guidance. Get expert meal plans, balanced macros, and sustainable eating habits tailored to your goals.</p>
             <div class="footer">
-                <button class="callToAction-button">Book now</button>
+                <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+                    <div class="shine"></div>
+                    Book now
+                </button>
                 <p class="price">30$-80$/month</p>
             </div>
         </div>
     </section>
     <!-- ABOUT ME -->
-    <section id="about">
+    <section id="about" class="section">
         <div class="image-container">
             <img src="./images/about-photo.jpg" alt="about">
         </div>
@@ -166,7 +186,10 @@
                 Hi, I'm Elio Geha, a personal trainer dedicated to helping people achieve their fitness goals. Whether you're looking to build muscles, lose weight or improve your overall health, I'm here to guide you with personalized training and expert support . Let's work together to unlock your full potential
             </p>
             <div class="footer">
-                <button class="callToAction-button">Book now</button>
+                <button class="callToAction-button" onclick="goTo(this , 'https://wa.me/81469187?text=Hello%20there')">
+                    
+                    Book now
+                </button>
                 <div class="socials-container">
                     <ul>
                         <li>
@@ -190,7 +213,7 @@
         </div>
     </section>
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="section">
         <p class="sections-title">Contact Me</p>
         <div class="contacts-container">
             <div class="contacts-cards">
