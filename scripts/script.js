@@ -6,15 +6,29 @@ const cards = document.querySelectorAll("#services .card");
 const themeTogglerButton = document.querySelector(".toggler-button");
 const sunIcon = document.querySelector("[alt='sun']")
 const moonIcon = document.querySelector("[alt='moon']")
+const sidebarLinks = document.querySelectorAll(".sidebar-link");
 
-burgerMenu.addEventListener("click" , (event) => {
-    sideBar.classList.remove("slideOutSidebar-animation");
-    sideBar.classList.add("slideInSidebar-animation");
+sidebarLinks.forEach(link => {
+    link.addEventListener("click" , () => {
+        collapseSidebar();
+    })
 })
 
-closeSideBar.addEventListener("click" , (event) => {
-    sideBar.classList.remove("slideInSidebar-animation");
-    sideBar.classList.add("slideOutSidebar-animation");
+burgerMenu.addEventListener("click" , showSidebar)
+
+closeSideBar.addEventListener("click" , collapseSidebar)
+
+themeTogglerButton.addEventListener("click" , (event) => {
+    // Theme is light change to dark
+    if(event.target.dataset.theme === "light")
+    {
+        toggleDarkTheme(event);
+    }
+    else
+    {
+    // Theme is dark change to light
+        toggleLightTheme(event);
+    }
 })
 
 cards.forEach(card => {
@@ -29,66 +43,75 @@ cards.forEach(card => {
         const rotateX = ((y - centerY) / centerY) * - 15;
         const rotateY = ((x - centerX) / centerX) * 15;
 
-        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-    })
+        card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
 
     card.addEventListener("mouseleave", () => {
         card.style.transform = `rotateX(0) rotateY(0)`;
-})
-})
+    });
+});
 
-themeTogglerButton.addEventListener("click" , (event) => {
-    // Theme is light change to dark
-    if(event.target.dataset.theme === "light")
-    {
-        event.target.style.backgroundColor = "green";
-        document.body.classList.add("dark-theme")
-        sunIcon.classList.remove("appear-animation")
-        sunIcon.classList.add("disappear-animation")
-        setTimeout(() => {
-            sunIcon.style.display="none";
-            sunIcon.style.opacity = "0"
-        } , 300)
-        
-        setTimeout(() => {
-            moonIcon.classList.remove("disappear-animation")
-            moonIcon.classList.add("appear-animation")
-        } , 300)
+function toggleDarkTheme(eve)
+{
+    eve.target.style.backgroundColor = "green";
+    document.body.classList.add("dark-theme")
+    sunIcon.classList.remove("appear-animation")
+    sunIcon.classList.add("disappear-animation")
+    setTimeout(() => {
+        sunIcon.style.display="none";
+        sunIcon.style.opacity = "0"
+    } , 300)
+    
+    setTimeout(() => {
+        moonIcon.classList.remove("disappear-animation")
+        moonIcon.classList.add("appear-animation")
+    } , 300)
 
-        moonIcon.style.display="block";
-        setTimeout(() => {
-            event.target.classList.remove("togglerleft-animation")
-            event.target.classList.add("togglerright-animation")
-        } , 100)
+    moonIcon.style.display="block";
+    setTimeout(() => {
+        eve.target.classList.remove("togglerleft-animation")
+        eve.target.classList.add("togglerright-animation")
+    } , 100)
 
-        event.target.dataset.theme = "dark"    
-    }
-    else
-    {
-    // Theme is dark change to light
-        event.target.style.backgroundColor = "black";
-        document.body.classList.remove("dark-theme")
-        moonIcon.classList.remove("appear-animation");
-        moonIcon.classList.add("disappear-animation");
-        setTimeout(() => {
-            moonIcon.style.display="none";
-            moonIcon.style.opacity = "0"
-        } , 300)
+    eve.target.dataset.theme = "dark"  
+}
 
-        setTimeout(() => {
-            sunIcon.classList.remove("disappear-animation")
-            sunIcon.classList.add("appear-animation")
-        } , 300)
+function toggleLightTheme(eve)
+{
+    eve.target.style.backgroundColor = "black";
+    document.body.classList.remove("dark-theme")
+    moonIcon.classList.remove("appear-animation");
+    moonIcon.classList.add("disappear-animation");
+    setTimeout(() => {
+        moonIcon.style.display="none";
+        moonIcon.style.opacity = "0"
+    } , 300)
 
-        sunIcon.style.display="block";
-        setTimeout(() => {
-            event.target.classList.remove("togglerright-animation")
-            event.target.classList.add("togglerleft-animation")
-        } , 100)
+    setTimeout(() => {
+        sunIcon.classList.remove("disappear-animation")
+        sunIcon.classList.add("appear-animation")
+    } , 300)
 
-        event.target.dataset.theme = "light"    
-    }
-})
+    sunIcon.style.display="block";
+    setTimeout(() => {
+        eve.target.classList.remove("togglerright-animation")
+        eve.target.classList.add("togglerleft-animation")
+    } , 100)
+
+    eve.target.dataset.theme = "light" 
+}
+
+function showSidebar()
+{
+    sideBar.classList.remove("slideOutSidebar-animation");
+    sideBar.classList.add("slideInSidebar-animation");
+}
+
+function collapseSidebar()
+{
+    sideBar.classList.remove("slideInSidebar-animation");
+    sideBar.classList.add("slideOutSidebar-animation");
+}
 
 function goTo(button , link)
 {

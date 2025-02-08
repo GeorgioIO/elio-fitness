@@ -19,6 +19,15 @@
     --primary-border: #987D7D;
     --secondary-border: #ffffffe1;
     --secondary-color-blue : rgb(13, 120, 153);
+
+    --hero-text-colors : #000000;
+
+    --service-cd-bgcolor : #FFFFFF;
+    --service-cd-btn-bgcolor : #000000;
+    --service-cd-btn-fontcolor : #FFFFFF;
+    --service-cd-shadow : #000000;
+
+    --contacts-card-fontcolor : #FFFFFF;
     /* fonts */
     --logo-font : "Karantina", serif;
     --primary-font-inter : "Inter", serif;
@@ -27,12 +36,14 @@
 .dark-theme
 {
     /* colors */
-    --primary-color: #33CAF4;
     --secondary-color: #FFFFFF;
     --tertiary-color: #141414;
-    --primary-border: #987D7D;
-    --secondary-border: #ffffffe1;
-    --secondary-color-blue : rgb(13, 120, 153);
+
+    --hero-text-colors : #FFFFFF;
+
+    --contacts-card-fontcolor : #000000;
+
+
 }
 
 /* ANIMATIONS */
@@ -278,6 +289,9 @@ header
     align-items: center;
     padding: 20px 30px 10px 30px;
     gap: 30px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
 }
 
 .logo
@@ -286,6 +300,7 @@ header
     text-transform: uppercase;
     font-size: 1.35rem;
     font-family: var(--logo-font);
+    color: var(--secondary-color);
 }
 
 
@@ -502,14 +517,14 @@ img[alt="hero"]
 
 .hero__texts > h2
 {
-    color: var(--secondary-color);
+    color: var(--hero-text-colors);
     font-size: clamp(2.35rem, 6vw, 4.35rem);
     max-width: 14ch;
 }
 
 .hero__texts > p:last-of-type
 {
-    color: var(--secondary-color);
+    color: var(--hero-text-colors);
     font-weight: 900;
     max-width: 30ch;
     line-height: 1.5;
@@ -604,7 +619,7 @@ img[alt="hero"]
     padding: 20px;
     border: 5px solid var(--secondary-color);
     border-radius: 20px;
-    box-shadow: 4px 4px 0px 0px var(--secondary-color) , 0px 0px 30px 0px rgba(112, 111, 111, 0.288);
+    box-shadow: 4px 4px 0px 0px var(--service-cd-shadow) , 0px 0px 30px 0px rgba(112, 111, 111, 0.288);
     display: grid;
     grid-template-rows: 1fr 40px 2.5fr 1.5fr;
     grid-template-columns: 100%;
@@ -615,7 +630,8 @@ img[alt="hero"]
     transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
     transform-style: preserve-3d;
     position: relative;
-    background-color: var(--tertiary-color);
+    background-color: var(--service-cd-bgcolor);
+    
 }
 
 .card > .title
@@ -645,9 +661,9 @@ img[alt="hero"]
 
 .card > .footer > .callToAction-button
 {
-    background-color: var(--secondary-color);
+    background-color: var(--service-cd-btn-bgcolor);
     border-color: var(--secondary-color);
-    color: var(--tertiary-color);
+    color: var(--service-cd-btn-fontcolor);
     width: 130px;
 }
 
@@ -677,9 +693,9 @@ img[alt="hero"]
 
 #about > .image-container
 {
-    min-width:450px;
+    min-width:480px;
     overflow: hidden;
-    border-radius: 2rem;
+    border-radius: 1.45rem;
 }
 
 #about > .image-container >  img
@@ -719,6 +735,7 @@ img[alt="hero"]
     line-height: 2;
     max-width: 75ch;
     text-align: justify;
+    color: var(--secondary-color);
 }
 
 .about-texts > .footer
@@ -743,7 +760,6 @@ img[alt="hero"]
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 20px;
 }
 
 /* CONTACT */
@@ -806,7 +822,7 @@ img[alt="hero"]
     display: flex;
     flex-direction: column;
     gap: 6px;
-    color: var(--tertiary-color);
+    color: var(--contacts-card-fontcolor);
 }
 
 form
@@ -830,6 +846,7 @@ form > p
     max-width: 55ch;
     text-align: justify;
     line-height: 1.75;
+    color: var(--secondary-color);
 }
 
 form > .form-flexbox
@@ -848,6 +865,7 @@ form > .form-flexbox
 }
 .field > label{
     width: 170px;
+    color: var(--secondary-color);
 }
 
 .field > input,
@@ -914,7 +932,7 @@ form  > .form-flexbox > .buttons
 
 .socials-container > ul 
 {
-    gap: 40px;
+    gap: 30px;
 }
 
 #footer > nav > .navigations
@@ -962,6 +980,11 @@ form  > .form-flexbox > .buttons
         width: 100%;
         gap: 40px;
     }
+
+    .socials-container > ul 
+    {
+        gap: 20px;
+    }
 }
 
 /* lg */
@@ -981,7 +1004,7 @@ form  > .form-flexbox > .buttons
 
     #about .socials-container > ul
     {
-        gap: 10px;
+        gap: 20px;
     }
 }
 
@@ -1034,12 +1057,12 @@ form  > .form-flexbox > .buttons
 
     .hero__texts > h2
     {
-        color: var(--tertiary-color);
+        color: #FFFFFF;
     }
 
     .hero__texts > p:last-of-type
     {
-        color: var(--tertiary-color);
+        color: #FFFFFF;
     }
 
     #hero  .callToAction-button
@@ -1069,6 +1092,11 @@ form  > .form-flexbox > .buttons
     #about > .about-texts
     {
         width: 100%;
+    }
+
+    #about .socials-container > ul
+    {
+        gap: 30px;
     }
 
     .contacts-container
@@ -1131,6 +1159,11 @@ form  > .form-flexbox > .buttons
 /* xs */
 @media (max-width: 475px) 
 {
+    header
+    {
+        gap: 15px;
+    }
+
     #hero
     {
         justify-content: center;
@@ -1160,8 +1193,6 @@ form  > .form-flexbox > .buttons
     }
 
 
-
-
     .form-flexbox > .field
     {
         flex-direction: column;
@@ -1179,6 +1210,7 @@ form  > .form-flexbox > .buttons
 
     .contacts-cards > .contact-card
     {
-        width: 100%;
+        width: 90%;
+        padding: 8px;
     }
 }
