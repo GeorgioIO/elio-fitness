@@ -7,6 +7,14 @@ const themeTogglerButton = document.querySelector(".toggler-button");
 const sunIcon = document.querySelector("[alt='sun']")
 const moonIcon = document.querySelector("[alt='moon']")
 const sidebarLinks = document.querySelectorAll(".sidebar-link");
+const upButton = document.querySelector(".go-up");
+
+upButton.addEventListener("click" , () => {
+    window.scroll({
+        top : 0,
+        behavior : 'smooth'
+    });
+})
 
 sidebarLinks.forEach(link => {
     link.addEventListener("click" , () => {
