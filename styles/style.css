@@ -42,8 +42,6 @@
     --hero-text-colors : #FFFFFF;
 
     --contacts-card-fontcolor : #000000;
-
-
 }
 
 /* ANIMATIONS */
@@ -944,6 +942,49 @@ form  > .form-flexbox > .buttons
 {
     margin-right: 0;
 }
+
+/* SUCCESS */
+
+
+.success
+{
+    width: 100%;
+    height:450px;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+.success > p
+{
+    color: var(--secondary-color);
+    font-size: 30px;
+    font-family: var(--primary-font-inter);
+    font-weight: 700;
+}
+
+.success > button
+{
+    width: 100px;
+    height: 30px;
+    border-radius: .55rem;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 2px 2px 0px 0px var(--secondary-color);
+    transition: ease-in-out 500ms;
+    font-family: var(--primary-font-inter);
+    color: var(--secondary-color);
+}
+
+.success > button:hover
+{
+    transform: scale(1.02);
+}
 /* MEDIA QUERIES */
 
 /* 2xl */
@@ -1153,6 +1194,12 @@ form  > .form-flexbox > .buttons
     {
         order: 1;
     }
+
+    .success
+    {
+        margin: auto 0;
+    }
+
 
 }
 
