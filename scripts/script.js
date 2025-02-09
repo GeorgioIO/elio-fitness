@@ -8,6 +8,18 @@ const sunIcon = document.querySelector("[alt='sun']")
 const moonIcon = document.querySelector("[alt='moon']")
 const sidebarLinks = document.querySelectorAll(".sidebar-link");
 const upButton = document.querySelector(".go-up");
+const adBanner = document.querySelector(".ad-container");
+const adText = document.querySelector(".ad-container p");
+
+
+window.addEventListener("DOMContentLoaded" , () => {    
+    adBanner.classList.add("showAdBanner-animation")
+
+    setTimeout(() => {
+        adText.classList.add("ad-animation");
+    } , 300)
+
+})
 
 upButton.addEventListener("click" , () => {
     window.scroll({

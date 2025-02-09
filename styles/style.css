@@ -45,6 +45,19 @@
 }
 
 /* ANIMATIONS */
+
+@keyframes showAdBanner
+{
+    0%
+    {
+        transform: translateY(-30px);
+    }
+
+    100%
+    {
+        transform: translateY(0);
+    }
+}
 @keyframes shine {
     0% {
         left: -70%;
@@ -107,6 +120,19 @@
     }
 }
 
+@keyframes adAnimation
+{
+    0%
+    {
+        transform: translateX(-800px);
+    }
+
+    100%
+    {
+        transform: translateX(800px);
+    }
+}
+
 @keyframes toggleright
 {
     0%
@@ -157,6 +183,10 @@
     }
 }
 
+.showAdBanner-animation
+{
+    animation: showAdBanner ease-in-out forwards 500ms;
+}
 
 .appear-animation
 {
@@ -176,6 +206,11 @@
 .togglerleft-animation
 {
     animation: toggleleft ease-in-out forwards 500ms;
+}
+
+.ad-animation
+{
+    animation: adAnimation ease-in-out infinite 8s;
 }
 
 .marquee-animation
@@ -318,12 +353,38 @@ header
     width: 100%;
     background-color: var(--tertiary-color);
     display: flex;
-    align-items: center;
-    padding: 20px 30px 10px 30px;
-    gap: 30px;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 15px;
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 5;
+}
+
+.sub-header
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 30px 20px 30px;
+}
+
+.ad-container
+{
+    background-color: var(--secondary-color);
+    width: 100%;
+    transform: translateY(-30px);
+    padding: 5px;
+    text-align: center;
+}
+
+.ad-container > p 
+{
+    font-family: var(--primary-font-inter);
+    color: var(--tertiary-color);
+    transform: translateX(-800px);
 }
 
 .logo
@@ -1087,13 +1148,13 @@ form  > .form-flexbox > .buttons
 
 @media (max-width: 840px) 
 {
-    header > nav,
-    header > button
+    .sub-header > nav,
+    .sub-header > button
     {
         display: none;
     }
 
-    header > .burger-menu
+    .sub-header > .burger-menu
     {
         display: flex;
     }
@@ -1242,7 +1303,7 @@ form  > .form-flexbox > .buttons
 /* xs */
 @media (max-width: 475px) 
 {
-    header
+    .sub-header
     {
         gap: 15px;
     }
