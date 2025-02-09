@@ -122,14 +122,20 @@
 
 @keyframes adAnimation
 {
-    0%
-    {
-        transform: translateX(-800px);
+    0% {
+        transform: translateX(0);
     }
-
-    100%
-    {
-        transform: translateX(1000px);
+    25% {
+        transform: translateX(15px);
+    }
+    50% {
+        transform: translateX(-15px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -210,7 +216,7 @@
 
 .ad-animation
 {
-    animation: adAnimation ease-in-out infinite 15s;
+    animation: adAnimation ease-in-out infinite 2s;
 }
 
 .marquee-animation
@@ -384,8 +390,6 @@ header
 {
     font-family: var(--primary-font-inter);
     color: var(--tertiary-color);
-    transform: translateX(-800px);
-    text-wrap: nowrap;
 }
 
 .logo
