@@ -28,6 +28,10 @@ upButton.addEventListener("click" , () => {
     });
 })
 
+window.addEventListener('scroll', e => {
+    upButton.style.display = window.scrollY > 50 ? 'flex' : 'none';
+});
+
 sidebarLinks.forEach(link => {
     link.addEventListener("click" , () => {
         collapseSidebar();
