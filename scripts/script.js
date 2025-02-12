@@ -1,7 +1,6 @@
 const burgerMenu = document.querySelector(".burger-menu");
 const sideBar = document.querySelector("#sidebar");
 const closeSideBar = document.querySelector("#sidebar .close");
-const allSection = document.querySelectorAll(".section");
 const cards = document.querySelectorAll("#services .card");
 const themeTogglerButton = document.querySelector(".toggler-button");
 const sunIcon = document.querySelector("[alt='sun']")
