@@ -1,0 +1,219 @@
+
+@keyframes smooth-appear {
+    to{
+      bottom: 20px;
+      opacity:1;
+    }
+  }
+
+@keyframes showAdBanner
+{
+    0%
+    {
+        transform: translateY(-30px);
+    }
+
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+@keyframes shine {
+    0% {
+        left: -250%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+@keyframes fillWidth 
+{
+    0%
+    {
+        width: 0%;
+    }   
+
+    100%
+    {
+        width: 100%;
+    }
+}
+
+@keyframes slideInSidebar
+{
+    0%
+    {
+        transform: translateX(-600px);
+    }
+
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutSidebar
+{
+    0%
+    {
+        transform: translateX(0px);
+    }
+
+    100%
+    {
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes marqueeAnimation
+{
+    0%
+    {
+        transform: translateX(-2000px);
+    }
+
+    100%
+    {
+        transform: translateX(2000px);
+    }
+}
+
+@keyframes adAnimation
+{
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(15px);
+    }
+    50% {
+        transform: translateX(-15px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes toggleright
+{
+    0%
+    {
+        transform: translateX(0);
+    }
+
+    100%
+    {
+        transform: translateX(30px);
+    }
+}
+
+@keyframes toggleleft
+{
+    0%
+    {
+        transform: translateX(30px);
+    }
+
+    100%
+    {
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear 
+{
+    0%{
+        opacity: 0;
+    }    
+
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear 
+{
+    0%{
+        opacity: 1;
+    }    
+
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp 
+{
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+@keyframes showCardBg 
+{
+    0% {
+      transform: translateX(400px);
+    }
+    100% {
+      transform: translateX(90px);
+    }
+}
+
+
+.showAdBanner-animation
+{
+    animation: showAdBanner ease-in-out forwards 500ms;
+}
+
+.appear-animation
+{
+    animation: appear ease-in-out forwards 500ms;
+}
+
+.disappear-animation
+{
+    animation: disappear ease-in-out forwards 500ms;
+}
+
+.togglerright-animation
+{
+    animation: toggleright ease-in-out forwards 500ms;
+}
+
+.togglerleft-animation
+{
+    animation: toggleleft ease-in-out forwards 500ms;
+}
+
+.ad-animation
+{
+    animation: adAnimation ease-in-out infinite 2s;
+}
+
+.marquee-animation
+{
+    animation: marqueeAnimation ease-in-out infinite 3s;
+}
+
+.slideOutSidebar-animation{
+    animation: slideOutSidebar ease-in-out forwards 400ms;
+}
+.slideInSidebar-animation{
+    animation: slideInSidebar ease-in-out forwards 400ms;
+}
+
+.fillWidth-animation{
+    animation: fillWidth ease-in-out forwards 400ms;
+}

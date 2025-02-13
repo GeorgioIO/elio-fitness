@@ -9,7 +9,7 @@ const sidebarLinks = document.querySelectorAll(".sidebar-link");
 const upButton = document.querySelector(".go-up");
 const adBanner = document.querySelector(".ad-container");
 const adText = document.querySelector(".ad-container p");
-
+const form = document.querySelector("form");
 
 window.addEventListener("DOMContentLoaded" , () => {    
     adBanner.classList.add("showAdBanner-animation")
@@ -20,16 +20,16 @@ window.addEventListener("DOMContentLoaded" , () => {
 
 })
 
+window.addEventListener('scroll', e => {
+    upButton.style.display = window.scrollY > 50 ? 'flex' : 'none';
+});
+
 upButton.addEventListener("click" , () => {
     window.scroll({
         top : 0,
         behavior : 'smooth'
     });
 })
-
-window.addEventListener('scroll', e => {
-    upButton.style.display = window.scrollY > 50 ? 'flex' : 'none';
-});
 
 sidebarLinks.forEach(link => {
     link.addEventListener("click" , () => {
