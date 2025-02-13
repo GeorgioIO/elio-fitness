@@ -1,4 +1,4 @@
-const burgerMenu = document.querySelector(".burger-menu");
+const burgerMenu = document.querySelectorAll(".burger-menu");
 const sideBar = document.querySelector("#sidebar");
 const closeSideBar = document.querySelector("#sidebar .close");
 const cards = document.querySelectorAll("#services .card");
@@ -37,7 +37,9 @@ sidebarLinks.forEach(link => {
     })
 })
 
-burgerMenu.addEventListener("click" , showSidebar)
+burgerMenu.forEach(menu => {
+    menu.addEventListener("click" , showSidebar)
+})
 
 closeSideBar.addEventListener("click" , collapseSidebar)
 
